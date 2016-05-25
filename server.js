@@ -20,11 +20,12 @@ mongoose.connect(url);
 function handleRequest(request, response){
 	router.route('/')
 	.get(function(req, res){
-		console.log("in get");
 		Final.find(function(err, final){
 			if (err)
 				res.send(err);
-			res.end("ip is ec2-54-213-48-50.us-west-2.compute.amazonaws.com" + "value is " + final[0].key);
+			res.end("ip is ec2-54-213-48-50.us-west-2.compute.amazonaws.com" + "value is " + final[0].key + "\n"
+		+ "ip is ec2-54-200-33-118.us-west-2.compute.amazonaws.com" + "value is " + final[0].key + "\n" + "
+			ip is: ec2-54-213-82-189.us-west-2.compute.amazonaws.comvalue is " + final[0].key);
 		});
 	});
 	mongoose.connect(endpoint2);
